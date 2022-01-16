@@ -1,14 +1,34 @@
 
 ```julia
 @. # automatically adds a dot before each operator and each function
+
 B = rand(4,4)
 t = @. exp((B + 1) ^ 2) / 2 == exp.((B .+ 1) .^ 2) ./ 2
 all(t) # true
 ```
  
 ```julia
-@view
-@views
+@view and @views # while slicing. avoids creating a new object.
 
+A = [1 2 3; 4 5 6]
+E = @view A[1:2] # E would point to the same portion as A[1:2]
+
+@views # for multiple slices in a statement, block, function
+
+```
+
+```julia
+@show # The @show macro in this example prints the results of an expression. It can also be used to print multiple variables at once.
+
+i = 1
+while i <= 5
+    @show i
+    i += 1
+end
+
+a, b, c = 1, "hello", :world;
+
+@show (a, b, c);
+(a, b, c) = (1, "hello", :world)
 
 ```

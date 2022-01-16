@@ -16,6 +16,9 @@ sum(v)      # sum of elements in x
 prod(v)     # product of elements in x
 cumsum(v)   # returns a vector with cumulative sum of elements in vector v
 
+factorial(5) # 120
+binomial(n,k) # n choose k
+
 x = 1234.555353           #  1234.555353
 
 # If the digits keyword argument is provided, it rounds to the specified number of digits after the decimal place
