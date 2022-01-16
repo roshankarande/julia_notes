@@ -11,6 +11,10 @@ round(x)	# round x to the nearest integer
 floor(x)	# round x towards -Inf
 ceil(x)	    # round x towards +Inf
 trunc(x)	# round x towards zero
+abs(x)      # absolute value
+sum(v)      # sum of elements in x
+prod(v)     # product of elements in x
+cumsum(v)   # returns a vector with cumulative sum of elements in vector v
 
 x = 1234.555353           #  1234.555353
 

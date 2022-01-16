@@ -40,4 +40,25 @@ zeros(T,dims) # zeros(3,4)  or zeros(Int8,(3,4))# default type is Float64
 ones(T,dims) # 
 fill(x,dims) # x filled object of given dimensions will be created
 
+rand(T,dims)
+randn(T, dims)
+
+copy(A)
+deepcopy(A) # recursive copy
+similar(A) # an uninitialized array of the same type as A and same dimensions
 ```
+
+```julia
+A = rand(3,4)
+A .= 1 # element wise assignment
+A .-= 5
+
+B = ones(3,4)
+
+A.*B  # elementwise multiplication
+
+A' # transpose of A
+
+
+```
+
