@@ -2,6 +2,9 @@
 
 ```julia
 k = 1:10
+k = range(1,10)
+# k = range(1,10; step = 1, length = 100) ... step to decide the step side.. length to specify how many points.. step is calculated accordinly.. either specify step or length (not both)
+ 
 minimum(k) 
 maximum(k) # like maximum([4,5,3])
 max(k...)  # like max(4, 5, 3)

@@ -1,3 +1,5 @@
+
+
 ```julia
 function gauss(x::Real; μ::Real = 0, σ::Real = 1)
     σ^2 > 0 || error("the variance `σ^2` must be positive")
@@ -6,7 +8,21 @@ end
 
 s = 0.01
 x = -100:s:100
-sum(gauss,x)*s
+sum(gauss, x)*s # same as sum(gauss.(x))*s ... in this case
+```
+## Optional arguments and optional keyword arguments
+
+```julia
+hello(x = "world") = println("Hello $(x).") # optional argument x
+hello()
+hello("people")
+
+linear(x; a = 1, b = 0) = a*x + b # notice the semi colon ; after (;) the arguments are keyword arguments
+linear(2)
+linear(2; a = 2, b = 1)
+
+a,b = 4,3
+linear(2;a,b) # shortcut for linear(2; a = a, b = b)
 ```
 
 ## vardiac arguments

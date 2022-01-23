@@ -43,6 +43,10 @@ fill(x,dims) # x filled object of given dimensions will be created
 rand(T,dims)
 randn(T, dims)
 
+# using Random
+randperm(4) # random permutation of given length some permutation of [1,2,3,4]
+shuffle([1,2,3,4]) # randomly shuffles 
+
 copy(A)
 deepcopy(A) # recursive copy
 similar(A) # an uninitialized array of the same type as A and same dimensions
@@ -53,12 +57,22 @@ A = rand(3,4)
 A .= 1 # element wise assignment
 A .-= 5
 
+B = zeros(4,4)
 B = ones(3,4)
+B = fill(4, 5,5) # create a 5x5 matrix with all entries 4
+B = Matrix(I, 4, 4) # create a 4x4 identity matrix 
 
 A.*B  # elementwise multiplication
 
-A' # transpose of A
+A' # hermitian of A. (which is transpose of A if A has real values)
+conj(transpose(A)) == A' # true
 
+inv(A) == A^-1 # Inverse of A
+det(A) # determinant of A
 
+val, vec = eigen(A) # using Linear Algebra
+eigvals(A), eigvecs(A) # LinearAlgebra
+norm(A,p) # p norm of A .. by default is 2
+ 
 ```
 
