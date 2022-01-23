@@ -3,10 +3,19 @@
 ```julia
 k = 1:10
 minimum(k) 
-maximum(k)
+maximum(k) # like maximum([4,5,3])
+max(k...)  # like max(4, 5, 3)
+
 sum(k)
+
+f(x) = x^2
+x = 1:100
+sum(f,x)  # sum of squares of x, # sum(f, itr; [init]) 
+
 length(k)
 prod(k)     # for produt
+
+repeat("abc", 3)
 ```
 
 
@@ -71,3 +80,12 @@ The collect() is an inbuilt function in julia which is used to return an array o
 collect(1:5:10)
 ```
 
+### Map
+
+ Transform collection c by applying f to each element. For multiple collection arguments, apply f elementwise, and stop when when any of them is exhausted.
+
+```julia
+map(x -> x^2 + 2x - 1, [1,3,-1]) 
+
+
+```
