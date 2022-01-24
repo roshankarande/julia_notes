@@ -16,3 +16,4 @@ function subtypes_tree(T::Type, level::Int = 0)
         subtypes_tree(s,level + 4)
     end
 end
+
