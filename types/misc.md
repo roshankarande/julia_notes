@@ -1,5 +1,8 @@
 ```julia
 typeof(111) # Int64
+isa(1, Int64) # true # equivalent to typeof(1) <: Int64
+isabstracttype(Real) # true
+isconcretetype(Real) # false
 ```
 
 ```julia

@@ -19,6 +19,7 @@ length(k)
 prod(k)     # for produt
 
 repeat("abc", 3)
+repeat(1:4, inner = 2) # [1, 1, 2, 2, 3, 3, 4, 4]
 ```
 
 

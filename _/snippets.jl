@@ -17,3 +17,22 @@ function subtypes_tree(T::Type, level::Int = 0)
     end
 end
 
+## Functors
+
+struct Polynomial{R}
+    coeffs::Vector{R}
+end
+
+function (p::Polynomial)(x)
+    v = p.coeffs[end]
+    for i = (length(p.coeffs)-1):-1:1
+        v = v*x + p.coeffs[i]
+    end
+    return v
+end
+
+(p::Polynomial)() = p(5) # specifies what to do when no value of x is pecified
+
+p = Polynomial([1,10,100 ]) # Polynomial{Int64}([1, 10, 100])
+julia> p(3) # 931
+p()  # 2551

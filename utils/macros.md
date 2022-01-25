@@ -43,3 +43,23 @@ a, b, c = 1, "hello", :world;
 
 @which max(1, 4.5) # max(x::Real, y::Real) 
 ```
+
+## code_
+
+```julia
+@code_native
+@code_llvm
+@code_typed
+```
+
+## assert
+
+```julia
+suit = 34
+@assert(1 ≤ suit ≤ 4, "suit is not between 1 and 4")
+```
+
+## test
+```julia
+@test Card(1, 3) < Card(1, 4)
+```

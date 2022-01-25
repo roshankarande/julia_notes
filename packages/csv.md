@@ -1,9 +1,18 @@
 ```julia
+]
+pin CSV@0.8.5
+# looks like newer version is breaking... with Julia 1.
+```
+
+```julia
 using CSV
 
 file = CSV.File("data.csv")
 
-CSV.write("a.csv", a) # a is some table 
+CSV.read(file) # CSV.read("data.csv")   # DataFrame(CSV.read(file))
+table = CSV.read("dataframe.csv", DataFrame; header = true)
+
+CSV.write("a.csv", a) # a is some dataframe 
 a |> CSV.write("a.csv") # another way
 ```
 
