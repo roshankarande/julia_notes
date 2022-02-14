@@ -53,6 +53,9 @@ similar(A) # an uninitialized array of the same type as A and same dimensions
 ```
 
 ```julia
+
+Array{Float64, 2}(undef, 2, 3) # 2x3 matrix with random entries 
+
 A = rand(3,4)
 A .= 1 # element wise assignment
 A .-= 5
@@ -68,11 +71,42 @@ A' # hermitian of A. (which is transpose of A if A has real values)
 conj(transpose(A)) == A' # true
 
 inv(A) == A^-1 # Inverse of A
+pinv(A) # pseudo inverse of A
 det(A) # determinant of A
 
+
+rank(A) # rank of matrix A
 val, vec = eigen(A) # using Linear Algebra
 eigvals(A), eigvecs(A) # LinearAlgebra
 norm(A,p) # p norm of A .. by default is 2
+
+Diagonal([1,2,3]) # diagonal matrix
  
 ```
 
+```julia
+A = rand(4,4)
+qr(A)
+lu(A)
+eigen(A) # only true if the matrix is diagonalizable
+
+cholesky(A) # only if the matrix is hermitian or symmetric
+
+
+```
+
+```julia
+
+julia> A = rand(4,3);
+
+julia> F = svd(A); # Store the Factorization Object  # F has U,S,Vt and V
+
+julia> A ≈ F.U * Diagonal(F.S) * F.Vt
+true
+
+julia> U, S, V = F; # destructuring via iteration # deconstructing F gives V... and not Vt
+
+julia> A ≈ U * Diagonal(S) * V'
+true
+
+```

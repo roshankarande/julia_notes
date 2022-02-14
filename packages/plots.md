@@ -209,3 +209,13 @@ plot(p1, p2, p3; layout = l)
 ```
 
 ## Animations
+
+## Links
+
+https://discourse.julialang.org/t/recording-mouse-position-coordinates-in-plots/28848
+
+https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ginput.html
+
+https://github.com/JuliaPy/PyPlot.jl/issues/314
+
+https://juliaplots.org/PlotlyJS.jl/stable/syncplots/#SyncPlots

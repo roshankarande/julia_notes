@@ -1,0 +1,5 @@
+## Latex Symbols
+
+```julia
+\infty -> ∞
+```

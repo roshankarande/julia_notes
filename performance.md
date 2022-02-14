@@ -17,3 +17,18 @@ f2(x,y) = x .+y
 # f1() function cannot be optimized because it contains two global variables, and these two variables can change at any time.
 
 ```
+
+
+## Tools
+https://docs.julialang.org/en/v1/manual/performance-tips/
+Tools section on this page
+
+
+Profiling allows you to measure the performance of your running code and identify lines that serve as bottlenecks. For complex projects, the ProfileView package can help you visualize your profiling results.
+
+The Traceur package can help you find common performance problems in your code.
+
+Unexpectedly-large memory allocations–as reported by @time, @allocated, or the profiler (through calls to the garbage-collection routines)–hint that there might be issues with your code. 
+If you don't see another reason for the allocations, suspect a type problem. You can also start Julia with the --track-allocation=user option and examine the resulting *.mem files to see information about where those allocations occur. See Memory allocation analysis.
+
+@code_warntype generates a representation of your code that can be helpful in finding expressions that result in type uncertainty. See @code_warntype below.

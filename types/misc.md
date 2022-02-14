@@ -14,3 +14,9 @@ typemin(Int64)   #
 typemax(Int64)   # 9223372036854775807
 ```
 
+## Pair
+
+```julia
+x = Pair(1,2)
+y = 1=>2
+```

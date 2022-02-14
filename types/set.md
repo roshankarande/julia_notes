@@ -1,0 +1,10 @@
+```julia
+union
+union!
+intersect
+intersect!
+setdiff
+setdiff!
+issubset
+contains
+```

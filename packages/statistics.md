@@ -11,3 +11,8 @@ mean(x), var(x), std(x)
 
 ```
 
+# StatsBase
+
+```julia
+sample(1:100, 10, replace = false)
+```

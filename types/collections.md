@@ -18,8 +18,10 @@ sum(f,x)  # sum of squares of x, # sum(f, itr; [init])
 length(k)
 prod(k)     # for produt
 
-repeat("abc", 3)
+repeat("abc", 3) # "abcabcabc"
 repeat(1:4, inner = 2) # [1, 1, 2, 2, 3, 3, 4, 4]
+unique([1, 1, 2, 2, 3, 3, 4, 4])
+allunique(itr) -> Bool # returns true if all the elements are unique
 ```
 
 
@@ -31,6 +33,8 @@ all(itr)  # Test if all elements of bool collection are true, return false if a 
 all(p,itr) # p is predicate  x ->  1 < x < 3
 a = [true,false,false,true]
 all(a)  # false
+findall(x -> x == 1, [1,1,2,3,1,2,4,5,6]) # returns the index where true in collection # [1, 2, 5]
+
 
 
 any(itr)  # true if even one element is true in bool collection
@@ -38,6 +42,35 @@ any(p,itr) #  p is predicate  x ->  1 < x < 3
 any([true, false,false]) # true
 any(i->(4<i<6), [3,5,7]) # true
 ```
+
+```julia
+merge(u,v) # merge two collections .. also can merge two dictionaries .. if common keys... values of v will take precedence
+merge(u,v) # results stored in u of merge u, v ... 
+sort(v)
+
+sort!(v) # sort in place # 
+sort(A,dims)   # matrix sorting 
+sort!(A,dims)   # matrix sorting in place
+
+sortperm(v) # returns the permutation that will sort v
+sortperm!(v)
+reverse(v)
+
+s = sort(v alg=QuickSort) # alg=InsertionSort, MergeSort 
+ps = sort(v; alg=PartialQuickSort(k)) # only upto index k
+
+sortslices([7 3 5; -1 6 4; 9 -2 8], dims=1) # Sort each row
+sortslices([7 3 5; -1 6 4; 9 -2 8], dims=1,rev = true) # Sort each row in reverse order
+
+issorted(v) # true if it is sorted
+issorted([(1, "b"), (2, "a")], by = x -> x[1]) # true
+issorted([(1, "b"), (2, "a")], by = x -> x[2], rev=true) # true
+
+ v = [3, 1, 2, 1];
+partialsortperm(v, 2) # 4 # returns the index of element in v, which will be at kth(2) index in sorted v
+partialsortperm(v, 1:3) # [2,4,3] # returns the index of elements in v, s.t. they will be first 3 in sorted v
+```
+
 
 ```julia
 for (i, val) in enumerate(A)

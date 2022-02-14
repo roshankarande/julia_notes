@@ -7,6 +7,8 @@ ndims(v)     # 1
 length(v)
 eltype(v)    # element typle ... Int64
 
+norm(v,k) # kth norm of v, by default 2... Inf to find the infinity norm of v
+
 v[begin], v[end]   # (1, 4)
 v[[2,3]]           # [2,3]
 v[:]    # all elements

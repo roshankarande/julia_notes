@@ -63,3 +63,15 @@ suit = 34
 ```julia
 @test Card(1, 3) < Card(1, 4)
 ```
+
+## progress
+
+```julia
+using ProgressLogging
+
+@progress "loop" for i in 1:100
+    sleep(0.01)
+end
+# in vscode you can see the notifications in the bottom to see what is going on
+
+```

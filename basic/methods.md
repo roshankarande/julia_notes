@@ -36,3 +36,25 @@ subtypes(Number)
 #  Real
 ```
 
+```julia
+function f1(a)  # matches any `a`; equivalent to `a::Any`
+  ...
+end
+
+function f2(a::AbstractArray)  # matches an array with any number of dimensions
+  ...
+end
+
+function f3(a::AbstractVector)  # matches an array with exactly one dimension
+  ...
+end
+
+function f4(a::AbstractVector{<: Number})  # matches an array with exactly one dimension
+                                           # whose elements are all some kind of `Number`
+  ...
+end
+
+function f5(a::Vector{Float64})  # matches only exactly a Vector of Float64
+  ...
+end
+```

@@ -6,6 +6,9 @@ df.A or df[!,:A] or df[!,1] or df[!, "A"]
 
 df[!, :A] # references to original df column... changing some value will reflect change in df
 df[:, :A] # creates a copy... chaning value in this won't reflect in df
+
+df[:,:] , df[!,:] ,  df # to access  the entire stuff 
+
 ```
 
 ## Adding columns or rows
@@ -40,7 +43,7 @@ push!(df, [1, :a])
 push!(df, [2, :b])
 push!(df, [3, :c])
 
-names(df)  #   "A" "B"
+names(df)  #   "A" "B" # names of the columns of dataframes
 rename!(df, [:a, :b, :c, :d, :e, :f]) # to rename all the columns at once
 rename!(df, Dict(:i => "A", :x => "X")) # rename particular columns
 
