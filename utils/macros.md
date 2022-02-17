@@ -75,3 +75,11 @@ end
 # in vscode you can see the notifications in the bottom to see what is going on
 
 ```
+
+## @edit
+
+```julia
+@edit @time print() # let's you open the definition file for @time
+
+@edit print()
+```

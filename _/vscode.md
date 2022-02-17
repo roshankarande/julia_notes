@@ -22,7 +22,7 @@ beginning of the line, or "Home" if you are at the end of the line.
 
 ## Julia
 
-Cntrl + Enter -> Execute selection or current line in REPL
+Cntrl + Enter / Cntrl + Shift -> Execute selection or current line in REPL
 Cntrl + Shift + R -> Execute File in Repl
 
 

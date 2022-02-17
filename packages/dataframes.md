@@ -54,6 +54,8 @@ using RDatasets, DataFrames
 iris = dataset("datasets", "iris")
 first(iris, 6) # last(iris, 6)
 describe(iris)    # For a Brief Description ... basic stats per column
+describe(iris, :all) # if you want to describe more information like std, quantile
+
 
 #!!NOTE that df[!, [:A]] and df[:, [:A]] return a DataFrame object, while df[!, :A] and df[:, :A] return a vector:
 iris[2:4, [:SepalLength, :Species]]  # accessing a particular subset

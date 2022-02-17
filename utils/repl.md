@@ -2,4 +2,5 @@
 | -----------   | ----------- |
 | Ctrl + L      | Clear console       |
 | ?     | help        |
-|;      | Package mode |
+|]      | Package mode |
+|;      | Shell mode |

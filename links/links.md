@@ -40,8 +40,9 @@ D P Sanders
 Expanding Man
 * https://discourse.julialang.org/u/ExpandingMan
 
-Bkamins
+Bkamins [ The DataFrames.jl guy ] 
 * https://discourse.julialang.org/u/bkamins
+* https://stackoverflow.com/users/1269567/bogumi%c5%82-kami%c5%84ski
 
 Ole Kröger
 * https://opensourc.es/blog/basics-multiple-dispatch/

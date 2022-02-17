@@ -80,8 +80,13 @@ val, vec = eigen(A) # using Linear Algebra
 eigvals(A), eigvecs(A) # LinearAlgebra
 norm(A,p) # p norm of A .. by default is 2
 
+
+
 Diagonal([1,2,3]) # diagonal matrix
- 
+
+
+isposdef(rand(4,4)) # checks if a matrix is positive semidef ... note the matrix has to be symmetric
+# A = [1 2; 0 1]; isposdef(A) ## false
 ```
 
 ```julia
