@@ -1,6 +1,6 @@
 https://docs.julialang.org/en/v1/manual/performance-tips/
 
-### Global variables
+## Global variables
 
 It is not recommended to use global variables in inside a function. The reason is that global variables can change their type and value at any time, and therefore they cannot be properly optimized by the compiler. 
 
@@ -17,6 +17,18 @@ f2(x,y) = x .+y
 # f1() function cannot be optimized because it contains two global variables, and these two variables can change at any time.
 
 ```
+
+## Avoid Changing the type of variable
+```julia
+function foo()
+    x = 1 # x starts as int and then becomes float... rather do x = 1.0 || x::Float64 = 1 || x = oneunit(Float64)
+    for i = 1:10
+        x /= rand()
+    end
+    return x
+end
+```
+
 
 
 ## Tools

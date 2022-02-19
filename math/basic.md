@@ -25,5 +25,9 @@ x = 1234.555353           #  1234.555353
 round(x,digits= 4)        #  1234.5554   
 # If the sigdigits keyword argument is provided, it rounds to the specified number of significant digits
 round(x,sigdigits= 2)     #  1200.0
+
+zero(n)  # returns zero for typeof(n)... e.g. zero(2.3) -> 0.0
+one(n) # dimensionless
+oneunit(n) # dimension based .. e.g using Dates; one(Dates.Day) -> 1 day
 ```
 

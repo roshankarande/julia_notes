@@ -2,6 +2,7 @@
 ]
 pin CSV@0.8.5
 # looks like newer version is breaking... with Julia 1.
+# This is fixed.. I think
 ```
 
 ```julia
