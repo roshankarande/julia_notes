@@ -7,6 +7,7 @@ k = range(1,10)
  
 minimum(k) 
 maximum(k) # like maximum([4,5,3])
+extrema(k)  # both the minimum and maxium
 max(k...)  # like max(4, 5, 3)
 
 sum(k)
@@ -16,7 +17,10 @@ x = 1:100
 sum(f,x)  # sum of squares of x, # sum(f, itr; [init]) 
 
 length(k)
-prod(k)     # for produt
+prod(k)     # for product
+
+reduce(min, k) # find the min of k == min(min(1,2),3) ... and so on
+reduce(f, k) # apply function f to perform reductions
 
 repeat("abc", 3) # "abcabcabc"
 repeat(1:4, inner = 2) # [1, 1, 2, 2, 3, 3, 4, 4]
@@ -47,6 +51,8 @@ any(i->(4<i<6), [3,5,7]) # true
 merge(u,v) # merge two collections .. also can merge two dictionaries .. if common keys... values of v will take precedence
 merge(u,v) # results stored in u of merge u, v ... 
 sort(v)
+sort(v, rev=true) # reverse sorting
+sort(d, byvalue=true) # to sort a dictionary d by value 
 
 sort!(v) # sort in place # 
 sort(A,dims)   # matrix sorting 
@@ -82,11 +88,12 @@ end
 ```julia
  # Create a generator that iterates over the first dimension of vector or matrix A
 a = [1 2; 3 4]
-first(eachrow(a)) [1,2]
-
+first(eachrow(a))   # [1,2]
+sum.(eachrow(a)) # [3,6]
 
 #Create a generator that iterates over the second dimension of matrix A
-first(eachcol(a)) = [1, 3]
+first(eachcol(a))  # [1, 3]
+sum.(eachcol(a))
 ```
 
 ### zip
@@ -125,4 +132,37 @@ collect(1:5:10)
 map(x -> x^2 + 2x - 1, [1,3,-1]) 
 
 
+```
+
+### Flatten
+
+```julia
+
+v = [1,2,3,[2,3,[4,5]]]
+
+# flattening 1 level only
+collect(Iterators.flatten(v))
+# 6-element Vector{Any}: 
+#  1
+#  2
+#  3
+#  2
+#  3
+#  [4, 5]
+
+vcat(v...) # same as Iterators.flatten
+
+# flattening deep structures
+function flatten(arr)
+   rst = Any[]
+   grep(v) =   for x in v
+               if isa(x, Tuple) ||  isa(x, Array)
+               grep(x)
+               else push!(rst, x) end
+               end
+   grep(arr)
+   rst
+end
+
+flatten(arr) # [1, 2, 3, 2, 3, 4,5]
 ```

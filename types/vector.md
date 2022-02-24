@@ -13,6 +13,8 @@ v[begin], v[end]   # (1, 4)
 v[[2,3]]           # [2,3]
 v[:]    # all elements
 v[1:2:end]   #  [1,3]
+
+v[1:end .!= 3 ]  # all entries except the third one
 ```
 
 

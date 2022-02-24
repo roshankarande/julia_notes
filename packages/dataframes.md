@@ -1,3 +1,6 @@
+
+https://dataframes.juliadata.org/stable/man/comparisons/
+
 ```julia
 using DataFrames
 df = DataFrame(A = 1:4, B = ["M", "F", "F", "M"], C = rand(4))
@@ -8,6 +11,16 @@ df[!, :A] # references to original df column... changing some value will reflect
 df[:, :A] # creates a copy... chaning value in this won't reflect in df
 
 df[:,:] , df[!,:] ,  df # to access  the entire stuff 
+
+```
+
+
+## Dataframe matrix conversion
+```julia
+ a = rand(4,4)
+ df = DataFrame(a,:auto) # automatically assign column names
+ df = DataFrame(a, [:a, :b, :c, :d]) # a, b, c, d will be the column names
+ mat = Matrix(df) # Converts the dataframe to matrix ... get's rid of the column names
 
 ```
 
@@ -90,3 +103,5 @@ https://dataframes.juliadata.org/stable/man/querying_frameworks/#DataFramesMeta.
 
 
 https://juliadata.github.io/DataFramesMeta.jl/stable/dplyr/
+
+C:\Users\heyia\.julia\packages\MLJBase\pCiRR\src\data\datasets.jl -> Has interesting macros e.g. y,X = @load_iris 

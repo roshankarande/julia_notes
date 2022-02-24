@@ -41,6 +41,7 @@ plot!(plt, x, sin.(x .+ π/4))
 
 ```
 
+
 ```julia
 using Plots
 f(x; k=1) = x^k
@@ -158,7 +159,7 @@ One way to change the plot series is the seriestype attribute. The following exa
 
 ```julia
 x = range(0, 2π; length = 100)
-y = sin.(x)
+y = sin.(x);
 plot(x, y; seriestype = :scatter) # alias -> t = :scatter
 scatter(x, y) # another way
 

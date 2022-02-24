@@ -44,6 +44,8 @@ Piping or using a pipe is another concept of chain functions. It can be used to 
 
 ```julia
 [-3, -6, -7] |> abs |> sum |> sqrt # 4
+(sqrt ∘ sum)(1:10) == ( 1:10 |> sum |> sqrt)
+
 
  # The pipe operator can be combined with broadcasting.
 [-4, 9, -16] .|> abs .|> sqrt # [2,3,4]

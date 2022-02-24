@@ -12,6 +12,7 @@ describe(msleep)
 
 ### @select
 @select msleep :name :sleep_total
+@select msleep :name :3   # :name column and column at index 3
 varnames = ["name", "sleep_total"]
 @select msleep $varnames
 @select msleep $(Not(:name))

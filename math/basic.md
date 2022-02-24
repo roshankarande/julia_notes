@@ -16,6 +16,12 @@ sum(v)      # sum of elements in x
 prod(v)     # product of elements in x
 cumsum(v)   # returns a vector with cumulative sum of elements in vector v
 
+minimum(v) # minimum of v
+maximum(v) # maximum of v
+extrema(v) # extrema of v ... i.e both the minimum and maximum
+# extrema(2:10), extrema([2,1,5]), extrema(x-> abs(x), -4:3)
+
+
 factorial(5) # 120
 binomial(n,k) # n choose k
 

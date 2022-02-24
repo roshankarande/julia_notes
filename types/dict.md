@@ -2,6 +2,9 @@
 d = Dict("a" => [1,2,3], "b" => 12)
 d = Dict(:a => [1,2,3], :b => 12) # here we are using symbols "a" is not same as :a
 
+values(d) # values of dictionary
+keys(d) # keys of dictionary
+
 d["a"] or d[:a]
 
 haskey(d,:a) or haskey(d,"a")
